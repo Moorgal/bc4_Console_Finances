@@ -93,25 +93,60 @@ let AvarageChange = 0;
 let GreatestIncrease = 0;
 let GreatestDecrease = 0;
 let DateIncrease = 0;
-let ValueIncrease = 0;
 let DateDecrease = 0;
-let ValueDecrease = 0;
 
 for (let i = 0; i < finances.length; i++) {
   TotalMonths++;
   Total = Total + finances[i][1];
+  if (GreatestIncrease < finances[i][1]) {
+    GreatestIncrease = finances[i][1];
+    DateIncrease = finances[i][0];
+  }
+  if (GreatestDecrease > finances[i][1]) {
+    GreatestDecrease = finances[i][1];
+    DateDecrease = finances[i][0];
+  }
 }
+
+AvarageChange = Total / TotalMonths;
 
 console.log("Financial Analysis");
 console.log("---------------------------");
 console.log("Total Months: " + TotalMonths);
 console.log("Total: $" + Total);
-console.log("Average  Change: $" + AvarageChange);
+console.log("Average  Change: $" + Math.floor(AvarageChange));
 console.log(
-  "Greatest Increase in Profits: " + DateIncrease + "($" + ValueIncrease + ")"
+  "Greatest Increase in Profits: " +
+    DateIncrease +
+    "($" +
+    GreatestIncrease +
+    ")"
 );
 console.log(
-  "Greatest Decrease in Profits: " + DateDecrease + "($" + ValueDecrease + ")"
+  "Greatest Decrease in Profits: " +
+    DateDecrease +
+    "($" +
+    GreatestDecrease +
+    ")"
 );
 
 console.log("```");
+
+document.getElementById("TotalMonths").innerHTML =
+  "<strong>Total Months: </strong>" + TotalMonths;
+document.getElementById("Total").innerHTML =
+  "<strong>Total: </strong>$" + Total;
+document.getElementById("AvarageChange").innerHTML =
+  "<strong>Average  Change: </strong>$" + Math.floor(AvarageChange);
+document.getElementById("Max").innerHTML =
+  "<strong>Greatest Increase in Profits: </strong>" +
+  DateIncrease +
+  "($" +
+  GreatestIncrease +
+  ")";
+document.getElementById("Min").innerHTML =
+  "<strong>Greatest Decrease in Profits: </strong>" +
+  DateDecrease +
+  "($" +
+  GreatestDecrease +
+  ")";
