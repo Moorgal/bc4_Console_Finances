@@ -86,3 +86,32 @@ var finances = [
   ["Jan-2017", 138230],
   ["Feb-2017", 671099],
 ];
+
+let TotalMonths = 0;
+let Total = 0;
+let AvarageChange = 0;
+let GreatestIncrease = 0;
+let GreatestDecrease = 0;
+let DateIncrease = 0;
+let ValueIncrease = 0;
+let DateDecrease = 0;
+let ValueDecrease = 0;
+
+for (let i = 0; i < finances.length; i++) {
+  TotalMonths++;
+  Total = Total + finances[i][1];
+}
+
+console.log("Financial Analysis");
+console.log("---------------------------");
+console.log("Total Months: " + TotalMonths);
+console.log("Total: $" + Total);
+console.log("Average  Change: $" + AvarageChange);
+console.log(
+  "Greatest Increase in Profits: " + DateIncrease + "($" + ValueIncrease + ")"
+);
+console.log(
+  "Greatest Decrease in Profits: " + DateDecrease + "($" + ValueDecrease + ")"
+);
+
+console.log("```");
