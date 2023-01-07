@@ -12,3 +12,10 @@ With a given dataset - what contained two field of arrays: Date and Profit/Loss 
 -The greatest decrease in profits(date and amount) over the entire period
 
 For this I used basic html/css to present the data and basic Javascript to make the calculations.
+
+Link to the application:
+https://moorgal.github.io/bc4_Console_Finances/
+
+![alt text](https://github.com/Moorgal/bc4_Console_Finances/blob/main/assets/images/Untitled-1.jpg)
+
+<!-- ![alt text](http://url/to/img.png) -->
